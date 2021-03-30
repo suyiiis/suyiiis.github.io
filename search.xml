@@ -1,11 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>noteForSE2</title>
+    <url>/2021/03/30/noteForSE2/</url>
+    <content><![CDATA[<h2 id="需求基础"><a href="#需求基础" class="headerlink" title="需求基础"></a>需求基础</h2><h3 id="需求基础-1"><a href="#需求基础-1" class="headerlink" title="需求基础"></a>需求基础</h3><h4 id="需求的层次"><a href="#需求的层次" class="headerlink" title="需求的层次"></a>需求的层次</h4><img src="/2021/03/30/noteForSE2/image-20210327182120172.png" alt="image-20210327182120172" style="zoom:33%;">
+
+<ol>
+<li>业务需求<ul>
+<li>系统建立的战略出发点，表现为高层次的目标，描述了组织为什么要开发系统</li>
+</ul>
+</li>
+<li>用户需求<ul>
+<li>执行实际工作的用户对系统所能完成的具体任务的期望，描述了系统能够帮助用户做些什么</li>
+<li>例：系统应该允许客户经理添加、修改或者删除会员个人信息</li>
+</ul>
+</li>
+<li>系统需求<ul>
+<li>用户对系统行为的期望，每个系统级需求反映了一次外界与系统的交互行为，或者系统的一个实现细节</li>
+<li>例：在接到客户经理的请求后，系统应改为客户经理提供所有会员的个人信息。</li>
+</ul>
+</li>
+</ol>
+<h3 id="需求分类"><a href="#需求分类" class="headerlink" title="需求分类"></a>需求分类</h3><h4 id="需求图谱"><a href="#需求图谱" class="headerlink" title="需求图谱"></a>需求图谱</h4><img src="/2021/03/30/noteForSE2/image-20210327180145887.png" alt="image-20210327180145887" style="zoom:33%;">
+
+<h4 id="1-项目需求"><a href="#1-项目需求" class="headerlink" title="1.项目需求"></a>1.项目需求</h4><img src="/2021/03/30/noteForSE2/image-20210327180943029.png" alt="image-20210327180943029" style="zoom:25%;">
+
+<h4 id="2-过程需求"><a href="#2-过程需求" class="headerlink" title="2.过程需求"></a>2.过程需求</h4><img src="/2021/03/30/noteForSE2/image-20210327180959902.png" alt="image-20210327180959902" style="zoom:25%;">
+
+<h4 id="3-系统需求"><a href="#3-系统需求" class="headerlink" title="3.系统需求"></a>3.系统需求</h4><h5 id="3-1软件需求"><a href="#3-1软件需求" class="headerlink" title="3.1软件需求"></a>3.1软件需求</h5><ol>
+<li>功能需求<ul>
+<li><img src="/2021/03/30/noteForSE2/image-20210327183120183.png" alt="image-20210327183120183" style="zoom:33%;"></li>
+</ul>
+</li>
+<li>性能需求<ul>
+<li>速度</li>
+<li>容量</li>
+<li>吞吐量</li>
+<li>负载</li>
+<li>实时性</li>
+</ul>
+</li>
+<li>质量属性<ul>
+<li>可靠性：上传下载时，如果网络故障，系统不能出现故障</li>
+<li>可用性：系统的可用性要达到98%</li>
+<li>安全性：收银员只能查看，不能修改、删除VIP顾客的信息</li>
+<li>可维护性：如果要加新功能，要能够在2人月内完成</li>
+<li>可移植性：服务器要能在1人月内从win7更换到solaris 10操作系统</li>
+<li>易用性：使用系统1个月的收银员进行销售处理的效率要达到10件商品/分钟</li>
+</ul>
+</li>
+<li>对外接口<ul>
+<li><img src="/2021/03/30/noteForSE2/image-20210327181945032.png" alt="image-20210327181945032" style="zoom:33%;"></li>
+</ul>
+</li>
+<li>约束<ul>
+<li><img src="/2021/03/30/noteForSE2/image-20210327182006421.png" alt="image-20210327182006421" style="zoom:33%;"></li>
+</ul>
+</li>
+<li>数据需求（非标准类型的软件需求类别，而是功能需求的补充）<ul>
+<li><img src="/2021/03/30/noteForSE2/image-20210327182031139.png" alt="image-20210327182031139" style="zoom:50%;"></li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>study</tag>
+        <tag>SE2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>这个小站开通啦</title>
     <url>/2021/03/21/%E8%BF%99%E4%B8%AA%E5%B0%8F%E7%AB%99%E5%BC%80%E9%80%9A%E5%95%A6/</url>
     <content><![CDATA[<p>磨叽了一两年，最后终于弄了个自己的博客</p>
 <p>以后可能会在这里放些学习资料，笔记</p>
 <p>或者生活、摄影之类的东西（如果不懒的话）</p>
 ]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
 </search>
