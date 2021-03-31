@@ -14,10 +14,11 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"senk.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"senk.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -217,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-31 11:23:50" itemprop="dateModified" datetime="2021-03-31T11:23:50+08:00">2021-03-31</time>
+                <time title="修改时间：2021-03-31 19:02:04" itemprop="dateModified" datetime="2021-03-31T19:02:04+08:00">2021-03-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,39 +249,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><h3 id="1-并"><a href="#1-并" class="headerlink" title="1.并"></a>1.并</h3><p>相同的合并成一列，不同的并起来</p>
-<h3 id="2-减"><a href="#2-减" class="headerlink" title="2.减"></a>2.减</h3><p>以R为基准，选择S没有的元组。S中R中没有的不算。</p>
-<h3 id="3-乘"><a href="#3-乘" class="headerlink" title="3.乘"></a>3.乘</h3><h3 id="4-除"><a href="#4-除" class="headerlink" title="4.除"></a>4.除</h3><p>R➗S是R中 ‘包含S在相同属性上投影关系集合’ 的属性</p>
-<h3 id="5-连接"><a href="#5-连接" class="headerlink" title="5.连接"></a>5.连接</h3><h4 id="自然连接"><a href="#自然连接" class="headerlink" title="自然连接"></a>自然连接</h4><ul>
-<li>筛选</li>
-</ul>
-<p>只有连接符两边都有的元素才进表</p>
-<h4 id="左外连接"><a href="#左外连接" class="headerlink" title="左外连接"></a>左外连接</h4><p>连接符左边集合的元素都在，没有对应就是null</p>
-<h4 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h4><p>连接符右边集合的元素都在，没有对应就是null</p>
-<p><img src="/2021/03/30/noteForDataBase/image-20210316175150770.png" alt="image-20210316175150770" style="zoom:25%;"></p>
-<h4 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h4><p>就是左右连接的并集</p>
-<h4 id="Theta-连接"><a href="#Theta-连接" class="headerlink" title="$\Theta$连接"></a>$\Theta$连接</h4><p>$R ∞F_S = (R×S) where F$</p>
-<h3 id="6-投影"><a href="#6-投影" class="headerlink" title="6.投影"></a>6.投影</h3><h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="SQL语法"></a>SQL语法</h2><h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><p>双<strong>exist</strong>表示：</p>
-<h4 id="朴素想法"><a href="#朴素想法" class="headerlink" title="朴素想法"></a>朴素想法</h4><p>一种自然的想法是：当一个人的所有技能包含需求的技能时，这个人被选中。试翻译为SQL，</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> person</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> person</span><br><span class="line"><span class="keyword">HAVING</span> PS.skill <span class="keyword">CONTAINS</span> SKill</span><br></pre></td></tr></table></figure>
-<p>可惜这不是一段可以执行的SQL，因为目前SQL不支持集合层面的包含关系判定。</p>
-<p>经过观察不难发现，当前SQL支持的所有真假判断（谓词）都定义在元组层面上，这迫使我们将PersonSkill中的person看作分散的个体，每个元组依次独立做出判断。然而，这作用在单个元组上的判断又必须考虑与其同名的其他元组，这让子查询的使用成为必然。最后，由于使某元组为真的谓词必定使其同名元组为真，需要加DISTINCT去重。</p>
-<p>综合上述思考，调整SQL语句框架为</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> person</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS</span><br><span class="line"><span class="keyword">WHERE</span> <span class="operator">&lt;</span>某关于PS.person的谓词(子查询)<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="实现减法"><a href="#实现减法" class="headerlink" title="实现减法"></a><strong>实现减法</strong></h4><p>我们现在要实现这样一个子查询，根据某人的姓名判断其技能是否满足需求。还是按照最自然的思路，判断某人的技能集是否包含需求集。</p>
-<p><strong>取出某人技能集的</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> skill</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill</span><br><span class="line"><span class="keyword">WHERE</span> person <span class="operator">=</span> 某人</span><br></pre></td></tr></table></figure>
-<p><strong>需求集</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT skill</span><br><span class="line">FROM Skill</span><br></pre></td></tr></table></figure>
-<p>记技能集为A，需求集为B，$B ⊆ A$等价于<br>$ \forall x\in B\rightarrow x\in A$<br>翻译为SQL</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Skill <span class="keyword">AS</span> S</span><br><span class="line">    <span class="keyword">WHERE</span> S.skill <span class="keyword">NOT</span> <span class="keyword">IN</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> skill <span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS</span><br><span class="line">        <span class="keyword">WHERE</span> PS.person <span class="operator">=</span> 某人</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>也可以看作对等价式$B − A = ∅ $的判断，其中NOT EXISTS判定空集，NOT IN实现集合差。</p>
-<p>遗憾的是，NOT IN实现集合差只对单列表有效</p>
-<p>等价的双EXISTS版本</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Skill <span class="keyword">AS</span> S</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS <span class="comment">-- 选A中对应S.skill的元组</span></span><br><span class="line">        <span class="keyword">WHERE</span> PS.person <span class="operator">=</span> 某人 <span class="keyword">AND</span>   <span class="comment">-- 某人的技能集A中的一个技能</span></span><br><span class="line">              PS.skill <span class="operator">=</span> S.skill    <span class="comment">-- 和需求集B中的一个技能相同</span></span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h4 id="实现除法"><a href="#实现除法" class="headerlink" title="实现除法"></a>实现除法</h4><p>综合上述讨论，</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> person</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Skill <span class="keyword">AS</span> S    <span class="comment">-- WHERE</span></span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> skill <span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS2</span><br><span class="line">        <span class="keyword">WHERE</span> PS2.person <span class="operator">=</span> PS1.person <span class="keyword">AND</span></span><br><span class="line">              PS2.skill <span class="operator">=</span> S.skill</span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
+          <p>conclusion of database</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/30/noteForDataBase/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -322,10 +299,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-30 09:41:06 / 修改时间：10:32:53" itemprop="dateCreated datePublished" datetime="2021-03-30T09:41:06+08:00">2021-03-30</time>
+              <time title="创建时间：2021-03-30 09:41:06" itemprop="dateCreated datePublished" datetime="2021-03-30T09:41:06+08:00">2021-03-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-31 20:26:09" itemprop="dateModified" datetime="2021-03-31T20:26:09+08:00">2021-03-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -355,7 +338,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="需求基础"><a href="#需求基础" class="headerlink" title="需求基础"></a>需求基础</h2><h3 id="需求基础-1"><a href="#需求基础-1" class="headerlink" title="需求基础"></a>需求基础</h3><h4 id="需求的层次"><a href="#需求的层次" class="headerlink" title="需求的层次"></a>需求的层次</h4><p><img src="/2021/03/30/noteForSE2/image-20210327182120172.png" alt="image-20210327182120172" style="zoom:33%;"></p>
+          <h1 id="项目启动"><a href="#项目启动" class="headerlink" title="项目启动"></a>项目启动</h1><h2 id="项目和项目管理"><a href="#项目和项目管理" class="headerlink" title="项目和项目管理"></a>项目和项目管理</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>在限定时间内；</li>
+<li>在一定的成本内；</li>
+<li>在要求的质量水平上；</li>
+<li>高效使用资源；</li>
+<li>获得客户认可。</li>
+</ul>
+<h3 id="过程和活动"><a href="#过程和活动" class="headerlink" title="过程和活动"></a>过程和活动</h3><p><strong>过程</strong>：项目启动、项目计划、项目执行、项目跟踪与控制和项目收尾</p>
+<p><strong>活动</strong>：计划制定、团队管理、成本控制、质量保障、度量、过程管理、进度跟踪与控制、⻛险管理、配置管理</p>
+<h2 id="软件质量保障"><a href="#软件质量保障" class="headerlink" title="软件质量保障"></a>软件质量保障</h2><p>活动：<strong>就是各种评审</strong></p>
+<h3 id="质量模型"><a href="#质量模型" class="headerlink" title="质量模型"></a>质量模型</h3><p><strong>功能性、可靠性、易用性、效率、可维护性、和可移植性</strong></p>
+<h3 id="评审"><a href="#评审" class="headerlink" title="评审"></a>评审</h3><ol>
+<li>在规划阶段（Planning），制定审查计划，决定审查会议的次数，安排每次审查会议的时间、地点、参与人员、审查内容等等。</li>
+<li>在总体部署阶段（Overview），向所有参与审查会议的人员描述待审查材料的内容、审查的目标以及一些假设，并分发文档。</li>
+<li>在准备阶段（Preparation），审查人员各自独立执行检查任务。在检查的过程当中，他们可能会被要求使用检查清单、场景等检查方法。检查中发现的问题会被记录下来，以准备开会讨论或者提交给收集人员。</li>
+<li>在审查会议阶段（Inspection Meeting），通过会议讨论，识别、确认、分类发现的错误。</li>
+<li>在返工阶段（Rework），修改发现的缺陷。</li>
+<li>在跟踪阶段（Follow-up），要确认所有发现的问题都得到了解决，所有的错误都得到了修正。</li>
+</ol>
+<h3 id="质量度量"><a href="#质量度量" class="headerlink" title="质量度量"></a>质量度量</h3><h4 id="测度"><a href="#测度" class="headerlink" title="测度"></a>测度</h4><p>是为了描述软件产品而提供的定量指标</p>
+<ul>
+<li>代码行数</li>
+</ul>
+<h4 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h4><p>进行测度的活动称为测量</p>
+<h4 id="度量"><a href="#度量" class="headerlink" title="度量"></a>度量</h4><p>是软件产品 在特定属性上的量化测度程度</p>
+<ul>
+<li>基于所有对象的代码行测度可以建立平均代码行数、最大代码行数、最小代码行数</li>
+</ul>
+<h2 id="软件配置管理"><a href="#软件配置管理" class="headerlink" title="软件配置管理"></a>软件配置管理</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>用技术的和管理的指导和监督方法，来标识和说明配置项的功能和物理特征，控制对这些特征的变更，记录和报告变更处理及其实现状态，并验证与规格需求的一致性</p>
+<p><img src="/2021/03/30/noteForSE2/image-20210331201525819.png" alt="image-20210331201525819" style="zoom:50%;"></p>
+<h3 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h3><p>置于软件配置管理之下的软件配置的各种有关项目，包括：</p>
+<ol>
+<li>各类管理文档</li>
+<li>评审记录与文档</li>
+<li>软件文档</li>
+<li>源码及其可执行码</li>
+<li>运行所需的系统软件和支持软件</li>
+<li>有关数据</li>
+<li>……</li>
+</ol>
+<p><strong>基线：</strong>：已经经过正式评审的规格说明或产品，可以作为进一步开发的基础，并且只有通过正式的变更控制过程才</p>
+<h3 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h3><h4 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h4><ul>
+<li><img src="/2021/03/30/noteForSE2/image-20210331194431566.png" alt="image-20210331194431566" style="zoom:33%;"></li>
+</ul>
+<h4 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h4><ul>
+<li><p>Lock-modify-unlock solution</p>
+<p><img src="/2021/03/30/noteForSE2/image-20210331194509416.png" alt="image-20210331194509416" style="zoom:50%;"></p>
+</li>
+<li><p>Copy-modify-merge solution</p>
+<p><img src="/2021/03/30/noteForSE2/image-20210331194538975.png" alt="image-20210331194538975" style="zoom:50%;"></p>
+</li>
+</ul>
+<h3 id="变更控制的过程"><a href="#变更控制的过程" class="headerlink" title="变更控制的过程"></a>变更控制的过程</h3><p><img src="/2021/03/30/noteForSE2/image-20210331194728713.png" alt="image-20210331194728713" style="zoom:75%;"></p>
+<h1 id="需求基础"><a href="#需求基础" class="headerlink" title="需求基础"></a>需求基础</h1><h2 id="需求基础-1"><a href="#需求基础-1" class="headerlink" title="需求基础"></a>需求基础</h2><h3 id="需求的层次"><a href="#需求的层次" class="headerlink" title="需求的层次"></a>需求的层次</h3><p><img src="/2021/03/30/noteForSE2/image-20210327182120172.png" alt="image-20210327182120172" style="zoom:33%;"></p>
 <ol>
 <li>业务需求<ul>
 <li>系统建立的战略出发点，表现为高层次的目标，描述了组织为什么要开发系统</li>
@@ -372,45 +408,14 @@
 </ul>
 </li>
 </ol>
-<h3 id="需求分类"><a href="#需求分类" class="headerlink" title="需求分类"></a>需求分类</h3><h4 id="需求图谱"><a href="#需求图谱" class="headerlink" title="需求图谱"></a>需求图谱</h4><p><img src="/2021/03/30/noteForSE2/image-20210327180145887.png" alt="image-20210327180145887" style="zoom:33%;"></p>
-<h4 id="1-项目需求"><a href="#1-项目需求" class="headerlink" title="1.项目需求"></a>1.项目需求</h4><p><img src="/2021/03/30/noteForSE2/image-20210327180943029.png" alt="image-20210327180943029" style="zoom:25%;"></p>
-<h4 id="2-过程需求"><a href="#2-过程需求" class="headerlink" title="2.过程需求"></a>2.过程需求</h4><p><img src="/2021/03/30/noteForSE2/image-20210327180959902.png" alt="image-20210327180959902" style="zoom:25%;"></p>
-<h4 id="3-系统需求"><a href="#3-系统需求" class="headerlink" title="3.系统需求"></a>3.系统需求</h4><h5 id="3-1软件需求"><a href="#3-1软件需求" class="headerlink" title="3.1软件需求"></a>3.1软件需求</h5><ol>
-<li>功能需求<ul>
-<li><img src="/2021/03/30/noteForSE2/image-20210327183120183.png" alt="image-20210327183120183" style="zoom:33%;"></li>
-</ul>
-</li>
-<li>性能需求<ul>
-<li>速度</li>
-<li>容量</li>
-<li>吞吐量</li>
-<li>负载</li>
-<li>实时性</li>
-</ul>
-</li>
-<li>质量属性<ul>
-<li>可靠性：上传下载时，如果网络故障，系统不能出现故障</li>
-<li>可用性：系统的可用性要达到98%</li>
-<li>安全性：收银员只能查看，不能修改、删除VIP顾客的信息</li>
-<li>可维护性：如果要加新功能，要能够在2人月内完成</li>
-<li>可移植性：服务器要能在1人月内从win7更换到solaris 10操作系统</li>
-<li>易用性：使用系统1个月的收银员进行销售处理的效率要达到10件商品/分钟</li>
-</ul>
-</li>
-<li>对外接口<ul>
-<li><img src="/2021/03/30/noteForSE2/image-20210327181945032.png" alt="image-20210327181945032" style="zoom:33%;"></li>
-</ul>
-</li>
-<li>约束<ul>
-<li><img src="/2021/03/30/noteForSE2/image-20210327182006421.png" alt="image-20210327182006421" style="zoom:33%;"></li>
-</ul>
-</li>
-<li>数据需求（非标准类型的软件需求类别，而是功能需求的补充）<ul>
-<li><img src="/2021/03/30/noteForSE2/image-20210327182031139.png" alt="image-20210327182031139" style="zoom:50%;"></li>
-</ul>
-</li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/30/noteForSE2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -660,6 +665,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
