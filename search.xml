@@ -58,6 +58,7 @@
 </ul>
 <h3 id="过程和活动"><a href="#过程和活动" class="headerlink" title="过程和活动"></a>过程和活动</h3><p><strong>过程</strong>：项目启动、项目计划、项目执行、项目跟踪与控制和项目收尾</p>
 <p><strong>活动</strong>：计划制定、团队管理、成本控制、质量保障、度量、过程管理、进度跟踪与控制、⻛险管理、配置管理</p>
+<span id="more"></span>
 <h2 id="软件质量保障"><a href="#软件质量保障" class="headerlink" title="软件质量保障"></a>软件质量保障</h2><p>活动：<strong>就是各种评审</strong></p>
 <h3 id="质量模型"><a href="#质量模型" class="headerlink" title="质量模型"></a>质量模型</h3><p><strong>功能性、可靠性、易用性、效率、可维护性、和可移植性</strong></p>
 <h3 id="评审"><a href="#评审" class="headerlink" title="评审"></a>评审</h3><ol>
@@ -119,7 +120,7 @@
 </ul>
 </li>
 </ol>
-<span id="more"></span>
+<!--more-->
 <h2 id="需求分类"><a href="#需求分类" class="headerlink" title="需求分类"></a>需求分类</h2><h3 id="需求图谱"><a href="#需求图谱" class="headerlink" title="需求图谱"></a>需求图谱</h3><p><img src="/2021/03/30/noteForSE2/image-20210327180145887.png" alt="image-20210327180145887" style="zoom:33%;"></p>
 <h3 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h3><p><img src="/2021/03/30/noteForSE2/image-20210327180943029.png" alt="image-20210327180943029" style="zoom:25%;"></p>
 <h3 id="过程需求"><a href="#过程需求" class="headerlink" title="过程需求"></a>过程需求</h3><p><img src="/2021/03/30/noteForSE2/image-20210327180959902.png" alt="image-20210327180959902" style="zoom:25%;"></p>
