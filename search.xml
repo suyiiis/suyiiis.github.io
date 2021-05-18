@@ -3,7 +3,7 @@
   <entry>
     <title>noteForDataBase</title>
     <url>/2021/03/30/noteForDataBase/</url>
-    <content><![CDATA[<h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><h3 id="1-并"><a href="#1-并" class="headerlink" title="1.并"></a>1.并</h3><p>相同的合并成一列，不同的并起来</p>
+    <content><![CDATA[<h1 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h1><h3 id="1-并"><a href="#1-并" class="headerlink" title="1.并"></a>1.并</h3><p>相同的合并成一列，不同的并起来</p>
 <h3 id="2-减"><a href="#2-减" class="headerlink" title="2.减"></a>2.减</h3><p>以R为基准，选择S没有的元组。S中R中没有的不算。</p>
 <h3 id="3-乘"><a href="#3-乘" class="headerlink" title="3.乘"></a>3.乘</h3><h3 id="4-除"><a href="#4-除" class="headerlink" title="4.除"></a>4.除</h3><p>R➗S是R中 ‘包含S在相同属性上投影关系集合’ 的属性</p>
 <h3 id="5-连接"><a href="#5-连接" class="headerlink" title="5.连接"></a>5.连接</h3><h4 id="自然连接"><a href="#自然连接" class="headerlink" title="自然连接"></a>自然连接</h4><ul>
@@ -15,7 +15,7 @@
 <p><img src="/2021/03/30/noteForDataBase/image-20210316175150770.png" alt="image-20210316175150770" style="zoom:25%;"></p>
 <h4 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h4><p>就是左右连接的并集</p>
 <h4 id="Theta-连接"><a href="#Theta-连接" class="headerlink" title="$\Theta$连接"></a>$\Theta$连接</h4><p>$R ∞F_S = (R×S) where F$</p>
-<h3 id="6-投影"><a href="#6-投影" class="headerlink" title="6.投影"></a>6.投影</h3><h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="SQL语法"></a>SQL语法</h2><h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><p>双<strong>exist</strong>表示：</p>
+<h3 id="6-投影"><a href="#6-投影" class="headerlink" title="6.投影"></a>6.投影</h3><h1 id="SQL语法"><a href="#SQL语法" class="headerlink" title="SQL语法"></a>SQL语法</h1><h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><p>双<strong>exist</strong>表示：</p>
 <h4 id="朴素想法"><a href="#朴素想法" class="headerlink" title="朴素想法"></a>朴素想法</h4><p>一种自然的想法是：当一个人的所有技能包含需求的技能时，这个人被选中。试翻译为SQL，</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> person</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> person</span><br><span class="line"><span class="keyword">HAVING</span> PS.skill <span class="keyword">CONTAINS</span> SKill</span><br></pre></td></tr></table></figure>
 <p>可惜这不是一段可以执行的SQL，因为目前SQL不支持集合层面的包含关系判定。</p>
@@ -35,6 +35,55 @@
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Skill <span class="keyword">AS</span> S</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS <span class="comment">-- 选A中对应S.skill的元组</span></span><br><span class="line">        <span class="keyword">WHERE</span> PS.person <span class="operator">=</span> 某人 <span class="keyword">AND</span>   <span class="comment">-- 某人的技能集A中的一个技能</span></span><br><span class="line">              PS.skill <span class="operator">=</span> S.skill    <span class="comment">-- 和需求集B中的一个技能相同</span></span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <h4 id="实现除法"><a href="#实现除法" class="headerlink" title="实现除法"></a>实现除法</h4><p>综合上述讨论，</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> person</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Skill <span class="keyword">AS</span> S    <span class="comment">-- WHERE</span></span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> skill <span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS2</span><br><span class="line">        <span class="keyword">WHERE</span> PS2.person <span class="operator">=</span> PS1.person <span class="keyword">AND</span></span><br><span class="line">              PS2.skill <span class="operator">=</span> S.skill</span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h1 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h1><h2 id="ER关系图"><a href="#ER关系图" class="headerlink" title="ER关系图"></a>ER关系图</h2><h2 id="ER向关系模型转化"><a href="#ER向关系模型转化" class="headerlink" title="ER向关系模型转化"></a>ER向关系模型转化</h2><h2 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2><h3 id="寻找表T中的函数依赖"><a href="#寻找表T中的函数依赖" class="headerlink" title="寻找表T中的函数依赖"></a>寻找表T中的函数依赖</h3><ol>
+<li>先考虑单个元素决定单个元素</li>
+<li>在考虑多个元素的情形</li>
+</ol>
+<h3 id="函数依赖集的闭包"><a href="#函数依赖集的闭包" class="headerlink" title="函数依赖集的闭包"></a>函数依赖集的闭包</h3><p>给定一个函数依赖集F，它能推导出的所有函数依赖集的集合称为F+</p>
+<h3 id="函数依赖集的覆盖"><a href="#函数依赖集的覆盖" class="headerlink" title="函数依赖集的覆盖"></a>函数依赖集的覆盖</h3><p>有函数依赖集F，G，若G中的所有函数依赖都能通过F中的函数依赖计算得到，则称F覆盖G</p>
+<p><em>若F覆盖G，同时G覆盖F，则G、F等价</em></p>
+<h3 id="函数依赖集的（最小）覆盖"><a href="#函数依赖集的（最小）覆盖" class="headerlink" title="函数依赖集的（最小）覆盖"></a>函数依赖集的（最小）覆盖</h3><ul>
+<li>没有冗余的函数依赖</li>
+<li>每一个函数依赖的左边都没有多余的属性</li>
+</ul>
+<p><strong>算法</strong>：</p>
+<ol>
+<li>右边分解成单个属性</li>
+<li>去除冗余<ul>
+<li>去掉一个函数依赖</li>
+<li>如果这个函数依赖左边的属性闭包没变，那么可以去除，否则不能去除</li>
+<li><img src="/2021/03/30/noteForDataBase/03/30/noteForDataBase/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDk5NzIx,size_16,color_FFFFFF,t_70.png" class title="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>化简左边<ul>
+<li>去掉一个函数依赖左边的一个属性</li>
+<li>如果去掉这个属性前剩下的属性的属性闭包和去掉后一样，那么能去掉改属性</li>
+<li><img src="/2021/03/30/noteForDataBase/03/30/noteForDataBase/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDk5NzIx,size_16,color_FFFFFF,t_70-20210516113927406.png" class title="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>合并<ul>
+<li>每一列（函数依赖的左边相同）右边乘起来</li>
+</ul>
+</li>
+</ol>
+<h3 id="属性集的闭包"><a href="#属性集的闭包" class="headerlink" title="属性集的闭包"></a>属性集的闭包</h3><p>就是一个属性能函数决定的所有属性的集合</p>
+<p><strong>算法</strong>：</p>
+<p><img src="/2021/03/30/noteForDataBase/image-20210516111412024.png" alt="image-20210516111412024" style="zoom:50%;"></p>
+<h2 id="无损连接"><a href="#无损连接" class="headerlink" title="无损连接"></a>无损连接</h2><h3 id="定理1（6-7-4）"><a href="#定理1（6-7-4）" class="headerlink" title="定理1（6.7.4）"></a>定理1（6.7.4）</h3><p>若$Head(T_1) \bigcap Head(T_2) \rightarrow Head(T_1)$或者</p>
+<p>$Head(T_1) \bigcap Head(T_2) \rightarrow Head(T_2)$</p>
+<p>则称T1、T2为T的一个无损分解</p>
+<h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><h3 id="依赖保持"><a href="#依赖保持" class="headerlink" title="依赖保持"></a>依赖保持</h3><p>T上的一个关系F分解为$F<em>1,F_2…$若$F</em>+ ={F<em>1,F_2…}</em>+$则称这个分解有依赖保持性</p>
+<h3 id="超键和键"><a href="#超键和键" class="headerlink" title="超键和键"></a>超键和键</h3><p><strong>发现候选键的算法</strong>（做n次）：</p>
+<ul>
+<li>令K=Head(T)</li>
+<li>删除K中的一个元素A</li>
+<li>如果$(K-A)_F^+$包含T中的所有元素</li>
+<li>那么可以删去这个元素</li>
+</ul>
+<p>主属性就是 键的集合K中的属性</p>
+<h3 id="BCNF范式"><a href="#BCNF范式" class="headerlink" title="BCNF范式"></a>BCNF范式</h3><p>若函数依赖集合T所有的函数决定都 满足 <strong>超键</strong>决定$\rightarrow$一个不在超键中的单一属性。</p>
+<p>则称它满足BCNF</p>
+<h3 id="3NF-第三范式"><a href="#3NF-第三范式" class="headerlink" title="3NF 第三范式"></a>3NF 第三范式</h3><p>确定候选键<br>        ↓<br>是否存在非主属性            Y<br>对主属性部分函数依赖   → 1NF<br>    N↓<br>非主属性是否            Y<br>传递依赖于候选键（非主属性是否函数依赖另一个非主属性）    → 2NF<br>    N↓<br>判断所有依赖项的       Y<br>左边是否全为候选键  →  BCNF<br>    N↓<br>3NF</p>
 ]]></content>
       <categories>
         <category>study</category>
@@ -123,7 +172,7 @@
 <!--more-->
 <h2 id="需求分类"><a href="#需求分类" class="headerlink" title="需求分类"></a>需求分类</h2><h3 id="需求图谱"><a href="#需求图谱" class="headerlink" title="需求图谱"></a>需求图谱</h3><p><img src="/2021/03/30/noteForSE2/image-20210327180145887.png" alt="image-20210327180145887" style="zoom:33%;"></p>
 <h3 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h3><p><img src="/2021/03/30/noteForSE2/image-20210327180943029.png" alt="image-20210327180943029" style="zoom:25%;"></p>
-<h3 id="过程需求"><a href="#过程需求" class="headerlink" title="过程需求"></a>过程需求</h3><p><img src="/2021/03/30/noteForSE2/image-20210327180959902.png" alt="image-20210327180959902" style="zoom:25%;"></p>
+<h3 id="过程需求"><a href="#过程需求" class="headerlink" title="过程需求"></a>过程需求</h3><p><img src="/2021/03/30/noteForSE2/image-20210327180959902.png" alt="image-20210327180959902" style="zoom:33%;"></p>
 <h3 id="系统需求"><a href="#系统需求" class="headerlink" title="系统需求"></a>系统需求</h3><h4 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h4><ol>
 <li>功能需求<ul>
 <li><img src="/2021/03/30/noteForSE2/image-20210327183120183.png" alt="image-20210327183120183" style="zoom:33%;"></li>

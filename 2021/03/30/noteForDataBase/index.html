@@ -29,8 +29,11 @@
 <meta property="og:description" content="conclusion of database">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://senk.top/2021/03/30/noteForDataBase/image-20210316175150770.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForDataBase/03/30/noteForDataBase/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDk5NzIx,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForDataBase/03/30/noteForDataBase/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDk5NzIx,size_16,color_FFFFFF,t_70-20210516113927406.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForDataBase/image-20210516111412024.png">
 <meta property="article:published_time" content="2021-03-30T09:47:49.000Z">
-<meta property="article:modified_time" content="2021-03-31T11:02:04.285Z">
+<meta property="article:modified_time" content="2021-05-18T02:35:54.258Z">
 <meta property="article:author" content="Ks">
 <meta property="article:tag" content="study">
 <meta property="article:tag" content="dataBase">
@@ -226,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-31 19:02:04" itemprop="dateModified" datetime="2021-03-31T19:02:04+08:00">2021-03-31</time>
+                <time title="修改时间：2021-05-18 10:35:54" itemprop="dateModified" datetime="2021-05-18T10:35:54+08:00">2021-05-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,7 +268,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><h3 id="1-并"><a href="#1-并" class="headerlink" title="1.并"></a>1.并</h3><p>相同的合并成一列，不同的并起来</p>
+        <h1 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h1><h3 id="1-并"><a href="#1-并" class="headerlink" title="1.并"></a>1.并</h3><p>相同的合并成一列，不同的并起来</p>
 <h3 id="2-减"><a href="#2-减" class="headerlink" title="2.减"></a>2.减</h3><p>以R为基准，选择S没有的元组。S中R中没有的不算。</p>
 <h3 id="3-乘"><a href="#3-乘" class="headerlink" title="3.乘"></a>3.乘</h3><h3 id="4-除"><a href="#4-除" class="headerlink" title="4.除"></a>4.除</h3><p>R➗S是R中 ‘包含S在相同属性上投影关系集合’ 的属性</p>
 <h3 id="5-连接"><a href="#5-连接" class="headerlink" title="5.连接"></a>5.连接</h3><h4 id="自然连接"><a href="#自然连接" class="headerlink" title="自然连接"></a>自然连接</h4><ul>
@@ -277,7 +280,7 @@
 <p><img src="/2021/03/30/noteForDataBase/image-20210316175150770.png" alt="image-20210316175150770" style="zoom:25%;"></p>
 <h4 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h4><p>就是左右连接的并集</p>
 <h4 id="Theta-连接"><a href="#Theta-连接" class="headerlink" title="$\Theta$连接"></a>$\Theta$连接</h4><p>$R ∞F_S = (R×S) where F$</p>
-<h3 id="6-投影"><a href="#6-投影" class="headerlink" title="6.投影"></a>6.投影</h3><h2 id="SQL语法"><a href="#SQL语法" class="headerlink" title="SQL语法"></a>SQL语法</h2><h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><p>双<strong>exist</strong>表示：</p>
+<h3 id="6-投影"><a href="#6-投影" class="headerlink" title="6.投影"></a>6.投影</h3><h1 id="SQL语法"><a href="#SQL语法" class="headerlink" title="SQL语法"></a>SQL语法</h1><h3 id="除"><a href="#除" class="headerlink" title="除"></a>除</h3><p>双<strong>exist</strong>表示：</p>
 <h4 id="朴素想法"><a href="#朴素想法" class="headerlink" title="朴素想法"></a>朴素想法</h4><p>一种自然的想法是：当一个人的所有技能包含需求的技能时，这个人被选中。试翻译为SQL，</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> person</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> person</span><br><span class="line"><span class="keyword">HAVING</span> PS.skill <span class="keyword">CONTAINS</span> SKill</span><br></pre></td></tr></table></figure>
 <p>可惜这不是一段可以执行的SQL，因为目前SQL不支持集合层面的包含关系判定。</p>
@@ -297,6 +300,55 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Skill <span class="keyword">AS</span> S</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS <span class="comment">-- 选A中对应S.skill的元组</span></span><br><span class="line">        <span class="keyword">WHERE</span> PS.person <span class="operator">=</span> 某人 <span class="keyword">AND</span>   <span class="comment">-- 某人的技能集A中的一个技能</span></span><br><span class="line">              PS.skill <span class="operator">=</span> S.skill    <span class="comment">-- 和需求集B中的一个技能相同</span></span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <h4 id="实现除法"><a href="#实现除法" class="headerlink" title="实现除法"></a>实现除法</h4><p>综合上述讨论，</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> person</span><br><span class="line"><span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Skill <span class="keyword">AS</span> S    <span class="comment">-- WHERE</span></span><br><span class="line">    <span class="keyword">WHERE</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">        <span class="keyword">SELECT</span> skill <span class="keyword">FROM</span> PersonSkill <span class="keyword">AS</span> PS2</span><br><span class="line">        <span class="keyword">WHERE</span> PS2.person <span class="operator">=</span> PS1.person <span class="keyword">AND</span></span><br><span class="line">              PS2.skill <span class="operator">=</span> S.skill</span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h1 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h1><h2 id="ER关系图"><a href="#ER关系图" class="headerlink" title="ER关系图"></a>ER关系图</h2><h2 id="ER向关系模型转化"><a href="#ER向关系模型转化" class="headerlink" title="ER向关系模型转化"></a>ER向关系模型转化</h2><h2 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2><h3 id="寻找表T中的函数依赖"><a href="#寻找表T中的函数依赖" class="headerlink" title="寻找表T中的函数依赖"></a>寻找表T中的函数依赖</h3><ol>
+<li>先考虑单个元素决定单个元素</li>
+<li>在考虑多个元素的情形</li>
+</ol>
+<h3 id="函数依赖集的闭包"><a href="#函数依赖集的闭包" class="headerlink" title="函数依赖集的闭包"></a>函数依赖集的闭包</h3><p>给定一个函数依赖集F，它能推导出的所有函数依赖集的集合称为F+</p>
+<h3 id="函数依赖集的覆盖"><a href="#函数依赖集的覆盖" class="headerlink" title="函数依赖集的覆盖"></a>函数依赖集的覆盖</h3><p>有函数依赖集F，G，若G中的所有函数依赖都能通过F中的函数依赖计算得到，则称F覆盖G</p>
+<p><em>若F覆盖G，同时G覆盖F，则G、F等价</em></p>
+<h3 id="函数依赖集的（最小）覆盖"><a href="#函数依赖集的（最小）覆盖" class="headerlink" title="函数依赖集的（最小）覆盖"></a>函数依赖集的（最小）覆盖</h3><ul>
+<li>没有冗余的函数依赖</li>
+<li>每一个函数依赖的左边都没有多余的属性</li>
+</ul>
+<p><strong>算法</strong>：</p>
+<ol>
+<li>右边分解成单个属性</li>
+<li>去除冗余<ul>
+<li>去掉一个函数依赖</li>
+<li>如果这个函数依赖左边的属性闭包没变，那么可以去除，否则不能去除</li>
+<li><img src="/2021/03/30/noteForDataBase/03/30/noteForDataBase/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDk5NzIx,size_16,color_FFFFFF,t_70.png" class title="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>化简左边<ul>
+<li>去掉一个函数依赖左边的一个属性</li>
+<li>如果去掉这个属性前剩下的属性的属性闭包和去掉后一样，那么能去掉改属性</li>
+<li><img src="/2021/03/30/noteForDataBase/03/30/noteForDataBase/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MDk5NzIx,size_16,color_FFFFFF,t_70-20210516113927406.png" class title="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>合并<ul>
+<li>每一列（函数依赖的左边相同）右边乘起来</li>
+</ul>
+</li>
+</ol>
+<h3 id="属性集的闭包"><a href="#属性集的闭包" class="headerlink" title="属性集的闭包"></a>属性集的闭包</h3><p>就是一个属性能函数决定的所有属性的集合</p>
+<p><strong>算法</strong>：</p>
+<p><img src="/2021/03/30/noteForDataBase/image-20210516111412024.png" alt="image-20210516111412024" style="zoom:50%;"></p>
+<h2 id="无损连接"><a href="#无损连接" class="headerlink" title="无损连接"></a>无损连接</h2><h3 id="定理1（6-7-4）"><a href="#定理1（6-7-4）" class="headerlink" title="定理1（6.7.4）"></a>定理1（6.7.4）</h3><p>若$Head(T_1) \bigcap Head(T_2) \rightarrow Head(T_1)$或者</p>
+<p>$Head(T_1) \bigcap Head(T_2) \rightarrow Head(T_2)$</p>
+<p>则称T1、T2为T的一个无损分解</p>
+<h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><h3 id="依赖保持"><a href="#依赖保持" class="headerlink" title="依赖保持"></a>依赖保持</h3><p>T上的一个关系F分解为$F<em>1,F_2…$若$F</em>+ ={F<em>1,F_2…}</em>+$则称这个分解有依赖保持性</p>
+<h3 id="超键和键"><a href="#超键和键" class="headerlink" title="超键和键"></a>超键和键</h3><p><strong>发现候选键的算法</strong>（做n次）：</p>
+<ul>
+<li>令K=Head(T)</li>
+<li>删除K中的一个元素A</li>
+<li>如果$(K-A)_F^+$包含T中的所有元素</li>
+<li>那么可以删去这个元素</li>
+</ul>
+<p>主属性就是 键的集合K中的属性</p>
+<h3 id="BCNF范式"><a href="#BCNF范式" class="headerlink" title="BCNF范式"></a>BCNF范式</h3><p>若函数依赖集合T所有的函数决定都 满足 <strong>超键</strong>决定$\rightarrow$一个不在超键中的单一属性。</p>
+<p>则称它满足BCNF</p>
+<h3 id="3NF-第三范式"><a href="#3NF-第三范式" class="headerlink" title="3NF 第三范式"></a>3NF 第三范式</h3><p>确定候选键<br>        ↓<br>是否存在非主属性            Y<br>对主属性部分函数依赖   → 1NF<br>    N↓<br>非主属性是否            Y<br>传递依赖于候选键（非主属性是否函数依赖另一个非主属性）    → 2NF<br>    N↓<br>判断所有依赖项的       Y<br>左边是否全为候选键  →  BCNF<br>    N↓<br>3NF</p>
 
     </div>
 
@@ -378,7 +430,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">关系代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1.并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">2.减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B9%98"><span class="nav-number">1.3.</span> <span class="nav-text">3.乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%99%A4"><span class="nav-number">1.4.</span> <span class="nav-text">4.除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.5.</span> <span class="nav-text">5.连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E7%84%B6%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.5.1.</span> <span class="nav-text">自然连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.5.2.</span> <span class="nav-text">左外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.5.3.</span> <span class="nav-text">右外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.5.4.</span> <span class="nav-text">外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.5.5.</span> <span class="nav-text">$\Theta$连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%8A%95%E5%BD%B1"><span class="nav-number">1.6.</span> <span class="nav-text">6.投影</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">SQL语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%A4"><span class="nav-number">2.1.</span> <span class="nav-text">除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E6%83%B3%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">朴素想法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%87%8F%E6%B3%95"><span class="nav-number">2.1.2.</span> <span class="nav-text">实现减法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E9%99%A4%E6%B3%95"><span class="nav-number">2.1.3.</span> <span class="nav-text">实现除法</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">关系代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%B9%B6"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%87%8F"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B9%98"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%99%A4"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E7%84%B6%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">自然连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">左外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.5.3.</span> <span class="nav-text">右外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.5.4.</span> <span class="nav-text">外连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.5.5.</span> <span class="nav-text">$\Theta$连接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%8A%95%E5%BD%B1"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.投影</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">SQL语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%A4"><span class="nav-number">2.0.1.</span> <span class="nav-text">除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E6%83%B3%E6%B3%95"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">朴素想法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%87%8F%E6%B3%95"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">实现减法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E9%99%A4%E6%B3%95"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">实现除法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">第六章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ER%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="nav-number">3.1.</span> <span class="nav-text">ER关系图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER%E5%90%91%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%E8%BD%AC%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">ER向关系模型转化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="nav-number">3.3.</span> <span class="nav-text">函数依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E8%A1%A8T%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96"><span class="nav-number">3.3.1.</span> <span class="nav-text">寻找表T中的函数依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">3.3.2.</span> <span class="nav-text">函数依赖集的闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86%E7%9A%84%E8%A6%86%E7%9B%96"><span class="nav-number">3.3.3.</span> <span class="nav-text">函数依赖集的覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96%E9%9B%86%E7%9A%84%EF%BC%88%E6%9C%80%E5%B0%8F%EF%BC%89%E8%A6%86%E7%9B%96"><span class="nav-number">3.3.4.</span> <span class="nav-text">函数依赖集的（最小）覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E9%9B%86%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">3.3.5.</span> <span class="nav-text">属性集的闭包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E6%8D%9F%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.4.</span> <span class="nav-text">无损连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%861%EF%BC%886-7-4%EF%BC%89"><span class="nav-number">3.4.1.</span> <span class="nav-text">定理1（6.7.4）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8C%83%E5%BC%8F"><span class="nav-number">3.5.</span> <span class="nav-text">范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E4%BF%9D%E6%8C%81"><span class="nav-number">3.5.1.</span> <span class="nav-text">依赖保持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%94%AE%E5%92%8C%E9%94%AE"><span class="nav-number">3.5.2.</span> <span class="nav-text">超键和键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCNF%E8%8C%83%E5%BC%8F"><span class="nav-number">3.5.3.</span> <span class="nav-text">BCNF范式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3NF-%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F"><span class="nav-number">3.5.4.</span> <span class="nav-text">3NF 第三范式</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
