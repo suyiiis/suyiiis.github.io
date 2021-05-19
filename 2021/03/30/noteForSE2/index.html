@@ -41,8 +41,16 @@
 <meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210327181945032.png">
 <meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210327182006421.png">
 <meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210327182031139.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210519104308387.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210519104656145.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210519104801011.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210519104941253.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/03/30/noteForSE2/image-20210519105531662.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210519112139007-20210519112202841.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210519112512093.png">
+<meta property="og:image" content="https://senk.top/2021/03/30/noteForSE2/image-20210519112622551.png">
 <meta property="article:published_time" content="2021-03-30T01:41:06.000Z">
-<meta property="article:modified_time" content="2021-04-01T06:06:29.822Z">
+<meta property="article:modified_time" content="2021-05-19T03:46:20.093Z">
 <meta property="article:author" content="Ks">
 <meta property="article:tag" content="study">
 <meta property="article:tag" content="SE2">
@@ -238,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-01 14:06:29" itemprop="dateModified" datetime="2021-04-01T14:06:29+08:00">2021-04-01</time>
+                <time title="修改时间：2021-05-19 11:46:20" itemprop="dateModified" datetime="2021-05-19T11:46:20+08:00">2021-05-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -386,7 +394,141 @@
 </ul>
 </li>
 </ol>
-
+<h1 id="软件体系结构基础"><a href="#软件体系结构基础" class="headerlink" title="软件体系结构基础"></a>软件体系结构基础</h1><h2 id="软件体系结构的发展"><a href="#软件体系结构的发展" class="headerlink" title="软件体系结构的发展"></a>软件体系结构的发展</h2><ol>
+<li>1969年第一次提到软件体系结构</li>
+</ol>
+<h2 id="理解软件体系结构"><a href="#理解软件体系结构" class="headerlink" title="理解软件体系结构"></a>理解软件体系结构</h2><h3 id="概念和定义"><a href="#概念和定义" class="headerlink" title="概念和定义"></a>概念和定义</h3><p><strong>一个软件系统的体系结构规定了系统的计算部件和部件之间的交互</strong></p>
+<p>Wiki：Software architecture is the realization of non-functional requirements, while software design is the realization of functional requirements.</p>
+<p>要素：</p>
+<ul>
+<li>高层抽象</li>
+<li>关注利益相关者</li>
+<li>设计方案</li>
+</ul>
+<h3 id="区分物理与逻辑"><a href="#区分物理与逻辑" class="headerlink" title="区分物理与逻辑"></a>区分物理与逻辑</h3><ul>
+<li>逻辑更高层</li>
+<li>逻辑-抽象，物理-实现</li>
+<li>逻辑意味着更高的视角</li>
+</ul>
+<h3 id="高层抽象"><a href="#高层抽象" class="headerlink" title="高层抽象"></a>高层抽象</h3><p><strong>好处：</strong></p>
+<ul>
+<li>直观，便于理解</li>
+<li>验证正确性</li>
+<li>关注度分离，降低复杂度</li>
+</ul>
+<p>部件、连接件、配置</p>
+<p>连接件是一个与部件平等的单位</p>
+<p>部件与连接件是比类、模块等软件单位更高层次的抽象</p>
+<h4 id="部件"><a href="#部件" class="headerlink" title="部件"></a>部件</h4><p>在系统架构中封装处理和数据的元素被称为软件组件</p>
+<p>组件通常提供特定于应用程序的服务</p>
+<p><img src="/2021/03/30/noteForSE2/image-20210519104308387.png" alt="image-20210519104308387" style="zoom:33%;"></p>
+<p>原始部件：可以直接被实现为相应的软件实现机制</p>
+<p>复合部件：由更细粒度的部件和连接件组成,复合部件通过局部配置将其内部的部件和连接件连接起来,构成一个整体</p>
+<h4 id="连接件"><a href="#连接件" class="headerlink" title="连接件"></a>连接件</h4><p><img src="/2021/03/30/noteForSE2/image-20210519104656145.png" alt="image-20210519104656145" style="zoom:33%;"></p>
+<p>原是连接件：可以直接被实现为相应的软件实现机制</p>
+<p>复合连接件：由更细粒度的部件和连接件组成,复合连接件通过局部配置将其内部的部件和连接件连接起来,构成一个整体</p>
+<p><img src="/2021/03/30/noteForSE2/image-20210519104801011.png" alt="image-20210519104801011" style="zoom:50%;"></p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img src="/2021/03/30/noteForSE2/image-20210519104941253.png" alt="image-20210519104941253" style="zoom:50%;"></p>
+<h2 id="体系结构风格初步"><a href="#体系结构风格初步" class="headerlink" title="体系结构风格初步"></a>体系结构风格初步</h2><h3 id="Main-Program-and-Subroutine-Style-主程序-子程序风格"><a href="#Main-Program-and-Subroutine-Style-主程序-子程序风格" class="headerlink" title="Main Program and Subroutine Style 主程序/子程序风格"></a>Main Program and Subroutine Style 主程序/子程序风格</h3><p>部件：procedures , functions and module</p>
+<p>连接件：calls between them</p>
+<img src="/2021/03/30/noteForSE2/03/30/noteForSE2/image-20210519105531662.png" class title="image-20210519105531662">
+<h4 id="设计决策与约束"><a href="#设计决策与约束" class="headerlink" title="设计决策与约束"></a>设计决策与约束</h4><ul>
+<li>基于声明-使用(程序调用)关系建立连接件,以层次分解的方式建立系统部件, 共同组成层次结构。（构成方式）</li>
+<li>每一个上层部件可以“使用”下层部件,但下层部件不能“使用”上层部件,即不允许逆方向调用（单向调用）</li>
+<li>系统应该是单线程执行。主程序部件拥有最初的执行控制权,并在“使用”中将控制权转移给下层子程序（单线程）</li>
+<li>子程序只能够通过上层转移来获得控制权,可以在执行中将控制权转交给下层的子子程序,并在自身执行完成之后必须将控制权还交给上层部件（控制单向传递）</li>
+</ul>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><ul>
+<li>功能分解</li>
+<li>集中控制</li>
+</ul>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p><strong>优点</strong>：</p>
+<ul>
+<li>流程清晰，易于理解</li>
+<li>强控制性</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>程序调用是一种强耦合的连接方式,非常依赖交互方的接口规格,这会使得系统难以修改和复用（强耦合，难修改、复用）</li>
+<li>程序调用的连接方式限制了各部件之间的数据交互,可能会使得不同部件使用隐含的共享数据交流,产生不必要的公共耦合,进而破坏它的“正确性”控制能力。（有公共耦合，破坏“正确性”的控制力）</li>
+</ul>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>主要用于能够将系统功能依层次分解为多个顺序执行步骤的系统。</p>
+<p>一些使用结构化方法(自顶向下或自底向上)建立的软件系统也属于主程序/子程序⻛格。</p>
+<h3 id="Object-Oriented-Style-面向对象风格"><a href="#Object-Oriented-Style-面向对象风格" class="headerlink" title="Object-Oriented Style 面向对象风格"></a>Object-Oriented Style 面向对象风格</h3><p>组件：object or module</p>
+<p>连接件：function or invocations (methods).</p>
+<h4 id="设计决策及约束"><a href="#设计决策及约束" class="headerlink" title="设计决策及约束"></a>设计决策及约束</h4><ul>
+<li>依照对数据的使用情况,用信息内聚的标准,为系统建立对象部件。每个对象部件基于内部数据提供对外服务接口,并隐藏内部数据的表示。（构建方式）</li>
+<li>基于方法调用(Method Invocation)机制建立连接件,将对象部件连接起来。（连接方式）</li>
+<li>每个对象负责维护其自身数据的一致性与完整性,并以此为基础对外提供“正确”的服务</li>
+<li>每个对象都是一个自治单位,不同对象之间是平级的,没有主次、从属、层次、分解等关系</li>
+</ul>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><ul>
+<li>任务分解</li>
+<li>（委托式）分散式控制</li>
+</ul>
+<h4 id="效果-1"><a href="#效果-1" class="headerlink" title="效果"></a>效果</h4><p><strong>优点：</strong></p>
+<ul>
+<li>内部实现的可修改性</li>
+<li>易开发、易理解、易复用的结构组织</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>接口的耦合性</li>
+<li>标识(Identity)的耦合性</li>
+<li>副作用：面向对象式⻛格借鉴了面向对象的思想,也引入了面向对象的副作用,因此更难实现程序的“正确性”。例如,如果 A 和B 都使用对象 C,那么 B 对 C 的修改可能会对 A 产生未预期的影响。再例如对象的重入(Reentry)问题:如果 A 的方法f()调用了 B 的方法 p(),而 p()又调用了 A 的另一方法 q(),那么就可能使得 q()失败,因为在 q()开始执行时,A 正处于 f()留下的执行现场,这个现场可能是数据不一致的。</li>
+</ul>
+<h4 id="应用-1"><a href="#应用-1" class="headerlink" title="应用"></a>应用</h4><p>适用于那些能够基于数据信息分解和组织的软件系统,这些系统: </p>
+<ul>
+<li>主要问题是标识和保护相关的数据信息;</li>
+<li>能够将数据信息和相关操作联系起来,进行封装</li>
+</ul>
+<h3 id="Layered-Style-层次风格"><a href="#Layered-Style-层次风格" class="headerlink" title="Layered Style 层次风格"></a>Layered Style 层次风格</h3><p>Components: typically collections of procedures or objects.</p>
+<p>Connectors: typically procedure calls or methods invocations under restricted visibility</p>
+<p><img src="/2021/03/30/noteForSE2/image-20210519112139007-20210519112202841.png" style="zoom:50%;"></p>
+<h4 id="设计决策与约束-1"><a href="#设计决策与约束-1" class="headerlink" title="设计决策与约束"></a>设计决策与约束</h4><ul>
+<li><strong>从最底层到最高层,部件的抽象层次逐渐提升</strong>。每个下层为邻接上层提供服务, 每个上层将邻接下层作为基础设施使用。也就是说,在程序调用机制中上层调用下层。</li>
+<li>两个层次之间的连接要遵守特定的交互协议,该交互协议应该是成熟、稳定和标准化的。也就是说,<strong>只要遵守交互协议,不同部件实例之间是可以互相替换的</strong>。</li>
+<li><strong>跨层次的连接是禁止的</strong>,不允许第 I 层直接调用 I+N(N&gt;1)层的服务</li>
+<li><strong>逆向的连接是禁止的</strong>,不允许第 I 层调用第 J(J&lt;I)层的服务</li>
+</ul>
+<h4 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h4><ul>
+<li>关注点分离（每层逐次抽象）</li>
+<li>层间接口使用固定协议（固定控制）</li>
+</ul>
+<h4 id="效果-2"><a href="#效果-2" class="headerlink" title="效果"></a>效果</h4><p><strong>优点：</strong></p>
+<ul>
+<li>设计机制清晰,易于理解。</li>
+<li>支持并行开发。</li>
+<li>更好的可复用性与内部可修改性。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>交互协议难以修改。</li>
+<li>性能损失。</li>
+<li>难以确定层次数量和粒度</li>
+</ul>
+<h4 id="应用-2"><a href="#应用-2" class="headerlink" title="应用"></a>应用</h4><p>分层⻛格适用于具备下列特性的系统:</p>
+<ul>
+<li>主要功能是能够在不同抽象层次上进行任务分解的复杂处理;</li>
+<li>能够建立不同抽象层次之间的稳定交互协议;</li>
+<li>没有很高的实时性能要求,能够容忍稍许的延迟;</li>
+</ul>
+<h3 id="Model-View-Controller-Style"><a href="#Model-View-Controller-Style" class="headerlink" title="Model-View-Controller Style"></a>Model-View-Controller Style</h3><p><img src="/2021/03/30/noteForSE2/image-20210519112512093.png" alt="image-20210519112512093" style="zoom:50%;"></p>
+<p>Changes in their states are propagated to the view subsystems</p>
+<p>The model subsystems are designed such that they do not depend on any view or controller subsystems</p>
+<p><img src="/2021/03/30/noteForSE2/image-20210519112622551.png" alt="image-20210519112622551" style="zoom:50%;"></p>
+<h4 id="设计决策和约束"><a href="#设计决策和约束" class="headerlink" title="设计决策和约束"></a>设计决策和约束</h4><h4 id="效果-3"><a href="#效果-3" class="headerlink" title="效果"></a>效果</h4><p><strong>优点：</strong></p>
+<ul>
+<li>易开发性。视图和控制的可修改性</li>
+<li>具有一定的可修改性优势</li>
+<li>适宜于网络系统开发的特征</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>复杂性：MVC 将用户任务分解成了表现、控制和模型三个部分,这增加了系统的复杂性,不利于理解任务实现</li>
+<li>模型修改困难</li>
+</ul>
+<h1 id="软件体系结构设计与构建"><a href="#软件体系结构设计与构建" class="headerlink" title="软件体系结构设计与构建"></a>软件体系结构设计与构建</h1>
     </div>
 
     
@@ -470,7 +612,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">项目启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">项目和项目管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E5%92%8C%E6%B4%BB%E5%8A%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">过程和活动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E4%BF%9D%E9%9A%9C"><span class="nav-number">1.2.</span> <span class="nav-text">软件质量保障</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">质量模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E5%AE%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%A8%E9%87%8F%E5%BA%A6%E9%87%8F"><span class="nav-number">1.2.3.</span> <span class="nav-text">质量度量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E5%BA%A6"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">测度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E9%87%8F"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">测量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">度量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">软件配置管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9"><span class="nav-number">1.3.2.</span> <span class="nav-text">配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">版本控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.4.</span> <span class="nav-text">变更控制的过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">需求基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9F%BA%E7%A1%80-1"><span class="nav-number">2.1.</span> <span class="nav-text">需求基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E7%9A%84%E5%B1%82%E6%AC%A1"><span class="nav-number">2.1.1.</span> <span class="nav-text">需求的层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">需求分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9B%BE%E8%B0%B1"><span class="nav-number">2.2.1.</span> <span class="nav-text">需求图谱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.2.</span> <span class="nav-text">项目需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.3.</span> <span class="nav-text">过程需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.4.</span> <span class="nav-text">系统需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">软件需求</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">项目启动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">项目和项目管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E5%92%8C%E6%B4%BB%E5%8A%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">过程和活动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E4%BF%9D%E9%9A%9C"><span class="nav-number">1.2.</span> <span class="nav-text">软件质量保障</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%A8%E9%87%8F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">质量模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E5%AE%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%A8%E9%87%8F%E5%BA%A6%E9%87%8F"><span class="nav-number">1.2.3.</span> <span class="nav-text">质量度量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E5%BA%A6"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">测度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E9%87%8F"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">测量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">度量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">软件配置管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9"><span class="nav-number">1.3.2.</span> <span class="nav-text">配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">版本控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E6%9B%B4%E6%8E%A7%E5%88%B6%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.4.</span> <span class="nav-text">变更控制的过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">需求基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9F%BA%E7%A1%80-1"><span class="nav-number">2.1.</span> <span class="nav-text">需求基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E7%9A%84%E5%B1%82%E6%AC%A1"><span class="nav-number">2.1.1.</span> <span class="nav-text">需求的层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">需求分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%9B%BE%E8%B0%B1"><span class="nav-number">2.2.1.</span> <span class="nav-text">需求图谱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.2.</span> <span class="nav-text">项目需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.3.</span> <span class="nav-text">过程需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.4.</span> <span class="nav-text">系统需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">软件需求</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">软件体系结构基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">3.1.</span> <span class="nav-text">软件体系结构的发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">3.2.</span> <span class="nav-text">理解软件体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">概念和定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%86%E7%89%A9%E7%90%86%E4%B8%8E%E9%80%BB%E8%BE%91"><span class="nav-number">3.2.2.</span> <span class="nav-text">区分物理与逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E5%B1%82%E6%8A%BD%E8%B1%A1"><span class="nav-number">3.2.3.</span> <span class="nav-text">高层抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E4%BB%B6"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">部件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E4%BB%B6"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">连接件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E9%A3%8E%E6%A0%BC%E5%88%9D%E6%AD%A5"><span class="nav-number">3.3.</span> <span class="nav-text">体系结构风格初步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Main-Program-and-Subroutine-Style-%E4%B8%BB%E7%A8%8B%E5%BA%8F-%E5%AD%90%E7%A8%8B%E5%BA%8F%E9%A3%8E%E6%A0%BC"><span class="nav-number">3.3.1.</span> <span class="nav-text">Main Program and Subroutine Style 主程序&#x2F;子程序风格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%86%B3%E7%AD%96%E4%B8%8E%E7%BA%A6%E6%9D%9F"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">设计决策与约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%88%E6%9E%9C"><span class="nav-number">3.3.1.3.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">3.3.1.4.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Oriented-Style-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%A3%8E%E6%A0%BC"><span class="nav-number">3.3.2.</span> <span class="nav-text">Object-Oriented Style 面向对象风格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%86%B3%E7%AD%96%E5%8F%8A%E7%BA%A6%E6%9D%9F"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">设计决策及约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%88%E6%9E%9C-1"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8-1"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layered-Style-%E5%B1%82%E6%AC%A1%E9%A3%8E%E6%A0%BC"><span class="nav-number">3.3.3.</span> <span class="nav-text">Layered Style 层次风格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%86%B3%E7%AD%96%E4%B8%8E%E7%BA%A6%E6%9D%9F-1"><span class="nav-number">3.3.3.1.</span> <span class="nav-text">设计决策与约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">3.3.3.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%88%E6%9E%9C-2"><span class="nav-number">3.3.3.3.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8-2"><span class="nav-number">3.3.3.4.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-View-Controller-Style"><span class="nav-number">3.3.4.</span> <span class="nav-text">Model-View-Controller Style</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%86%B3%E7%AD%96%E5%92%8C%E7%BA%A6%E6%9D%9F"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">设计决策和约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%88%E6%9E%9C-3"><span class="nav-number">3.3.4.2.</span> <span class="nav-text">效果</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%9E%84%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">软件体系结构设计与构建</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
